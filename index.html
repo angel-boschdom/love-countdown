@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tina & Ángel — Countdown to Our Cambridge Arrival</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A little surprise: a romantic countdown until we meet at Cambridge Station." />
+  <meta name="theme-color" content="#7aa7ff" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0c1024;
+      --blue:#7aa7ff;
+      --pink:#ff9ac7;
+      --text:#f6f8ff;
+      --muted:#cfe0ff;
+      --glass:hsla(230,50%,12%,.55);
+      --ring: hsla(220, 90%, 70%, .35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% -10%, rgba(122,167,255,.25), transparent 60%),
+        radial-gradient(1000px 700px at 120% 20%, rgba(255,154,199,.2), transparent 60%),
+        linear-gradient(180deg, #0a0f22 0%, #0b1230 60%, #0a0f22 100%);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+      display:grid;
+      place-items:center;
+      overflow-x:hidden;
+    }
+    .wrap{
+      width:min(900px,92vw);
+      padding:32px 28px;
+    }
+    .card{
+      position:relative;
+      border-radius:28px;
+      padding:40px 28px;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow: 0 10px 50px rgba(122,167,255,.12), inset 0 0 0 1px rgba(255,255,255,.05);
+      backdrop-filter: blur(8px);
+      outline:1px solid rgba(255,255,255,.06);
+    }
+    .halo::before,.halo::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      border-radius:30px;
+      background: conic-gradient(from 180deg at 50% 50%, rgba(122,167,255,.25), rgba(255,154,199,.25), rgba(122,167,255,.25));
+      filter: blur(18px);
+      opacity:.25;
+      z-index:-1;
+      animation: glow 9s linear infinite;
+    }
+    @keyframes glow{
+      0%{transform: rotate(0deg)}
+      100%{transform: rotate(360deg)}
+    }
+    h1{
+      margin:0 0 6px;
+      font-family:"Playfair Display", serif;
+      font-weight:700;
+      letter-spacing:.3px;
+      font-size:clamp(28px, 5vw, 46px);
+      line-height:1.15;
+      text-align:center;
+      background: linear-gradient(90deg, var(--blue), var(--pink));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .sub{
+      text-align:center;
+      color:var(--muted);
+      font-size:clamp(14px, 2.2vw, 18px);
+      margin-bottom:28px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin:10px auto 24px;
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:13px;
+      color:#0a1030;
+      background:linear-gradient(90deg, rgba(122,167,255,.9), rgba(255,154,199,.9));
+      box-shadow: 0 2px 18px rgba(122,167,255,.25);
+    }
+    .countdown{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:14px;
+      margin: 18px 0 10px;
+    }
+    .unit{
+      position:relative;
+      padding:18px 10px;
+      border-radius:18px;
+      text-align:center;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      outline:1px solid rgba(255,255,255,.06);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
+    }
+    .num{
+      font-variant-numeric: tabular-nums;
+      font-feature-settings:"tnum" 1,"ss02" 1;
+      font-size: clamp(32px, 8vw, 64px);
+      line-height:1;
+      letter-spacing:1px;
+      font-weight:700;
+      background: linear-gradient(90deg, var(--blue), var(--pink));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow: 0 6px 24px rgba(122,167,255,.12);
+    }
+    .label{
+      display:block;
+      margin-top:6px;
+      font-size:12px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color: #bcd0ff;
+      opacity:.9;
+    }
+    .note{
+      margin:18px 0 2px;
+      font-size:13px;
+      color:#cbd7ff;
+      text-align:center;
+      opacity:.9;
+    }
+    .when{
+      margin-top:8px;
+      font-size:14px;
+      color:#eaefff;
+      text-align:center;
+    }
+    .actions{
+      margin-top:20px;
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      --btn-bg: linear-gradient(90deg, rgba(122,167,255,.2), rgba(255,154,199,.2));
+      border:1px solid rgba(255,255,255,.18);
+      background:var(--btn-bg);
+      color:var(--text);
+      padding:10px 14px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      transition: transform .12s ease, box-shadow .12s ease, background .3s ease;
+      box-shadow: 0 6px 20px rgba(122,167,255,.15);
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 26px rgba(122,167,255,.22); }
+    .btn:focus-visible{ outline:3px solid var(--ring); outline-offset:3px }
+    footer{
+      margin-top:22px;
+      text-align:center;
+      font-size:12px;
+      color:#a9bbff;
+      opacity:.9;
+    }
+    .heart{
+      position:fixed; left:50%; top:50%;
+      width:14px; height:14px; transform:translate(-50%, -50%) rotate(45deg);
+      background: radial-gradient(circle at 30% 30%, var(--pink), var(--blue));
+      box-shadow: 0 0 20px rgba(255,154,199,.45);
+      clip-path: polygon(50% 0%, 61% 7%, 71% 18%, 78% 30%, 80% 44%, 76% 56%, 68% 66%, 50% 84%, 32% 66%, 24% 56%, 20% 44%, 22% 30%, 29% 18%, 39% 7%);
+      opacity:0;
+      pointer-events:none;
+      will-change: transform, opacity;
+    }
+    @keyframes floatUp {
+      0%{ transform: translate(var(--x, 0), var(--y, 0)) scale(1); opacity:0 }
+      10%{ opacity:.85 }
+      100%{ transform: translate(var(--x, 0), calc(var(--y, 0) - 180px)) scale(0.9); opacity:0 }
+    }
+    @media (max-width:560px){
+      .wrap{ padding:22px 18px }
+      .card{ padding:28px 18px }
+      .countdown{ gap:10px }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .halo::before,.halo::after{ animation:none }
+      .heart{ display:none }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card halo" aria-live="polite">
+      <div class="badge">🚆 Cambridge Station • Friday 5 Sept 2025 • 8:00 PM</div>
+      <h1>Tina & Ángel</h1>
+      <p class="sub">After more than a month apart, we’re almost there. This is our countdown. 💙💗</p>
+
+      <div class="countdown" role="timer" aria-atomic="true" aria-relevant="text" aria-live="polite">
+        <div class="unit"><div class="num" id="d">—</div><span class="label">Days</span></div>
+        <div class="unit"><div class="num" id="h">—</div><span class="label">Hours</span></div>
+        <div class="unit"><div class="num" id="m">—</div><span class="label">Minutes</span></div>
+        <div class="unit"><div class="num" id="s">—</div><span class="label">Seconds</span></div>
+      </div>
+
+      <p class="note">Anchored to Cambridge time (Europe/London).</p>
+      <p class="when">
+        Cambridge: <span id="when-uk">Friday, 5 September 2025, 20:00</span><br/>
+        Your local time: <span id="when-local">Converting…</span>
+      </p>
+
+      <div class="actions">
+        <a class="btn" href="https://maps.google.com/?q=Cambridge+Railway+Station" target="_blank" rel="noopener">Open in Maps</a>
+        <a class="btn" id="shareBtn" href="#" role="button">Share</a>
+      </div>
+
+      <footer>Made with love by Ángel for Tina • 💙 + 💗</footer>
+    </section>
+  </main>
+
+  <script>
+    // Event moment: 20:00 in Cambridge (Europe/London) on 2025-09-05.
+    // London is UTC+1 on this date (BST), so UTC time is 19:00Z.
+    const EVENT_ISO_UTC = '2025-09-05T19:00:00Z';
+    const eventDateUTC = new Date(EVENT_ISO_UTC);
+
+    const elD = document.getElementById('d');
+    const elH = document.getElementById('h');
+    const elM = document.getElementById('m');
+    const elS = document.getElementById('s');
+    const uk = document.getElementById('when-uk');
+    const loc = document.getElementById('when-local');
+    const shareBtn = document.getElementById('shareBtn');
+
+    // Format the "when" text
+    try {
+      const ukFmt = new Intl.DateTimeFormat('en-GB', {
+        dateStyle: 'full', timeStyle: 'short', timeZone: 'Europe/London'
+      });
+      const yourFmt = new Intl.DateTimeFormat(undefined, {
+        dateStyle: 'full', timeStyle: 'short'
+      });
+      uk.textContent = ukFmt.format(eventDateUTC);
+      loc.textContent = yourFmt.format(eventDateUTC) + ` (${Intl.DateTimeFormat().resolvedOptions().timeZone})`;
+    } catch {
+      uk.textContent = 'Fri, 5 Sep 2025, 20:00';
+      loc.textContent = 'Will match your device time';
+    }
+
+    // Countdown
+    const pad2 = n => String(n).padStart(2,'0');
+    let tickId = null;
+
+    function render(diffMs){
+      const total = Math.max(0, Math.floor(diffMs/1000));
+      const days = Math.floor(total / 86400);
+      const hours = Math.floor((total % 86400) / 3600);
+      const mins = Math.floor((total % 3600) / 60);
+      const secs = total % 60;
+
+      elD.textContent = days;
+      elH.textContent = pad2(hours);
+      elM.textContent = pad2(mins);
+      elS.textContent = pad2(secs);
+    }
+
+    function celebrate(){
+      // Gentle floating hearts
+      for(let i=0;i<24;i++){
+        const h = document.createElement('div');
+        h.className = 'heart';
+        const spreadX = (Math.random()*2-1)*220;
+        const spreadY = (Math.random()*2-1)*40;
+        h.style.setProperty('--x', `${spreadX}px`);
+        h.style.setProperty('--y', `${80 + spreadY}px`);
+        h.style.left = `${50 + (Math.random()*2-1)*18}%`;
+        h.style.top = `${58 + (Math.random()*2-1)*6}%`;
+        h.style.animation = `floatUp ${900 + Math.random()*900}ms ease-in forwards`;
+        document.body.appendChild(h);
+        setTimeout(()=>h.remove(), 2000);
+      }
+    }
+
+    function tick(){
+      const now = new Date();
+      const diff = eventDateUTC - now;
+      render(diff);
+      if (diff <= 0){
+        if (tickId) clearInterval(tickId);
+        document.querySelector('.sub').innerHTML = `It’s time. I’m here. 💙💗`;
+        celebrate();
+        setInterval(celebrate, 1800); // a few waves of hearts
+      }
+    }
+
+    tick();
+    const startDelay = 1000 - (Date.now() % 1000); // align to the second
+    setTimeout(()=> { tickId = setInterval(tick, 1000); }, startDelay);
+
+    // Web Share API (fallback to URL copy)
+    shareBtn.addEventListener('click', async (e)=>{
+      e.preventDefault();
+      const shareData = {
+        title: 'Countdown to our Cambridge arrival',
+        text: 'Tina, here’s our little countdown 💙💗',
+        url: location.href
+      };
+      if (navigator.share){
+        try { await navigator.share(shareData); } catch {}
+      } else if (navigator.clipboard){
+        try {
+          await navigator.clipboard.writeText(location.href);
+          shareBtn.textContent = 'Link copied!';
+          setTimeout(()=>shareBtn.textContent='Share', 1600);
+        } catch {}
+      }
+    });
+  </script>
+</body>
+</html>
