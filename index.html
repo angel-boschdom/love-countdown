@@ -5,30 +5,30 @@
   <title>Tina & Ángel — Countdown to finally meet again 🫶</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="A little surprise: a romantic countdown until we meet 🏠." />
-  <meta name="theme-color" content="#7aa7ff" />
+  <meta name="theme-color" content="#bfe7ff" />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#ffffff;
-      --blue:#7aa7ff;
-      --pink:#ff9ac7;
-      --text:#f6f8ff;
-      --muted:#cfe0ff;
-      --glass:hsla(230, 85%, 57%, 0.55);
-      --ring: hsla(220, 58%, 59%, 0.35);
+      /* Softer, brighter accents */
+      --blue:#9fd6ff;   /* baby/sky blue */
+      --pink:#ffb6da;   /* soft pink */
+      --text:#1f3056;   /* comfortable dark blue for contrast on light bg */
+      --muted:#4f72a8;  /* mid blue for secondary text */
+      --ring: hsla(210, 100%, 70%, .35);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
       color:var(--text);
+      /* Light, optimistic background with gentle blue/pink bloom */
       background:
-        radial-gradient(1200px 800px at 20% -10%, rgba(122,167,255,.25), transparent 60%),
-        radial-gradient(1000px 700px at 120% 20%, rgba(255,154,199,.2), transparent 60%),
-        linear-gradient(180deg, #0a0f22 0%, #0b1230 60%, #0a0f22 100%);
+        radial-gradient(1000px 600px at 10% -10%, rgba(159,214,255,.55), transparent 60%),
+        radial-gradient(1100px 700px at 120% 20%, rgba(255,182,218,.45), transparent 60%),
+        linear-gradient(180deg, #f6fbff 0%, #ffffff 60%, #fff5fa 100%);
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
       display:grid;
       place-items:center;
@@ -42,26 +42,25 @@
       position:relative;
       border-radius:28px;
       padding:40px 28px;
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      box-shadow: 0 10px 50px rgba(122,167,255,.12), inset 0 0 0 1px rgba(255,255,255,.05);
+      /* lighter glass on light background */
+      background:linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.65));
+      box-shadow: 0 10px 40px rgba(159,214,255,.25);
       backdrop-filter: blur(8px);
-      outline:1px solid rgba(255,255,255,.06);
+      outline:1px solid rgba(20, 54, 100, .08);
     }
     .halo::before,.halo::after{
       content:"";
       position:absolute;
       inset:-2px;
       border-radius:30px;
-      background: conic-gradient(from 180deg at 50% 50%, rgba(122,167,255,.25), rgba(255,154,199,.25), rgba(122,167,255,.25));
+      background: conic-gradient(from 180deg at 50% 50%, rgba(159,214,255,.35), rgba(255,182,218,.35), rgba(159,214,255,.35));
       filter: blur(18px);
-      opacity:.25;
+      opacity:.35;
       z-index:-1;
       animation: glow 9s linear infinite;
     }
-    @keyframes glow{
-      0%{transform: rotate(0deg)}
-      100%{transform: rotate(360deg)}
-    }
+    @keyframes glow{ 0%{transform: rotate(0deg)} 100%{transform: rotate(360deg)} }
+
     h1{
       margin:0 0 6px;
       font-family:"Playfair Display", serif;
@@ -89,9 +88,10 @@
       padding:6px 12px;
       border-radius:999px;
       font-size:13px;
-      color:#0a1030;
-      background:linear-gradient(90deg, rgba(122,167,255,.9), rgba(255,154,199,.9));
-      box-shadow: 0 2px 18px rgba(122,167,255,.25);
+      color:#15325c;
+      /* lighter, cheerful pill */
+      background:linear-gradient(90deg, rgba(159,214,255,.95), rgba(255,182,218,.95));
+      box-shadow: 0 6px 24px rgba(159,214,255,.35);
     }
     .countdown{
       display:grid;
@@ -104,9 +104,9 @@
       padding:18px 10px;
       border-radius:18px;
       text-align:center;
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      outline:1px solid rgba(255,255,255,.06);
-      box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
+      background: linear-gradient(180deg, rgba(242,249,255,.9), rgba(255,255,255,.85));
+      outline:1px solid rgba(20, 54, 100, .08);
+      box-shadow: 0 6px 20px rgba(159,214,255,.25);
     }
     .num{
       font-variant-numeric: tabular-nums;
@@ -119,7 +119,7 @@
       -webkit-background-clip:text;
       background-clip:text;
       color:transparent;
-      text-shadow: 0 6px 24px rgba(122,167,255,.12);
+      text-shadow: none;
     }
     .label{
       display:block;
@@ -127,20 +127,20 @@
       font-size:12px;
       letter-spacing:2px;
       text-transform:uppercase;
-      color: #bcd0ff;
-      opacity:.9;
+      color:#5f7dbb;
+      opacity:.95;
     }
     .note{
       margin:18px 0 2px;
       font-size:13px;
-      color:#cbd7ff;
+      color:#4f72a8;
       text-align:center;
-      opacity:.9;
+      opacity:.95;
     }
     .when{
       margin-top:8px;
       font-size:14px;
-      color:#eaefff;
+      color:#294a7a;
       text-align:center;
     }
     .actions{
@@ -151,8 +151,8 @@
       flex-wrap:wrap;
     }
     .btn{
-      --btn-bg: linear-gradient(90deg, rgba(122,167,255,.2), rgba(255,154,199,.2));
-      border:1px solid rgba(255,255,255,.18);
+      --btn-bg: linear-gradient(90deg, rgba(159,214,255,.35), rgba(255,182,218,.35));
+      border:1px solid rgba(20, 54, 100, .15);
       background:var(--btn-bg);
       color:var(--text);
       padding:10px 14px;
@@ -161,22 +161,22 @@
       font-weight:600;
       font-size:14px;
       transition: transform .12s ease, box-shadow .12s ease, background .3s ease;
-      box-shadow: 0 6px 20px rgba(122,167,255,.15);
+      box-shadow: 0 6px 20px rgba(159,214,255,.25);
     }
-    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 26px rgba(122,167,255,.22); }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 26px rgba(159,214,255,.35); }
     .btn:focus-visible{ outline:3px solid var(--ring); outline-offset:3px }
     footer{
       margin-top:22px;
       text-align:center;
       font-size:12px;
-      color:#a9bbff;
-      opacity:.9;
+      color:#5d78b8;
+      opacity:.95;
     }
     .heart{
       position:fixed; left:50%; top:50%;
       width:14px; height:14px; transform:translate(-50%, -50%) rotate(45deg);
       background: radial-gradient(circle at 30% 30%, var(--pink), var(--blue));
-      box-shadow: 0 0 20px rgba(255,154,199,.45);
+      box-shadow: 0 0 20px rgba(255,182,218,.45);
       clip-path: polygon(50% 0%, 61% 7%, 71% 18%, 78% 30%, 80% 44%, 76% 56%, 68% 66%, 50% 84%, 32% 66%, 24% 56%, 20% 44%, 22% 30%, 29% 18%, 39% 7%);
       opacity:0;
       pointer-events:none;
@@ -196,6 +196,63 @@
       .halo::before,.halo::after{ animation:none }
       .heart{ display:none }
     }
+
+        /* === Contrast boost (baby blue + soft pink, higher readability) === */
+    :root{
+    /* slightly deeper, still baby/sky vibe */
+    --blue:#6fbaff;   /* was #9fd6ff */
+    --pink:#ff8fc6;   /* was #ffb6da */
+    --text:#1a2e4f;   /* darker ink for body/buttons */
+    --muted:#3d5f8f;  /* secondary text */
+    --ring: hsla(210, 100%, 60%, .40);
+    }
+
+    /* brighter white card with a clearer edge */
+    .card{
+    background:linear-gradient(180deg, #ffffff, #f6faff);
+    outline:1px solid rgba(26,46,79,.10);
+    box-shadow: 0 14px 44px rgba(111,186,255,.22);
+    }
+
+    /* clearer tiles for numbers */
+    .unit{
+    background: linear-gradient(180deg, #ffffff, #f2f7ff);
+    outline:1px solid rgba(26,46,79,.10);
+    box-shadow: 0 8px 26px rgba(111,186,255,.20);
+    }
+
+    /* stronger digits but still soft; add a subtle stroke for legibility */
+    .num{
+    background: linear-gradient(90deg, var(--blue), var(--pink));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    -webkit-text-stroke: 0.6px rgba(26,46,79,.08);
+    text-shadow: 0 8px 18px rgba(111,186,255,.18);
+    }
+
+    /* headings & labels slightly darker */
+    h1{
+    background: linear-gradient(90deg, #5fb0ff, #ff7fbf);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .label{ color:#4c6fa6; opacity:1 }
+
+    /* body copy */
+    .sub{ color:var(--muted) }
+    .note{ color:#3f659a }
+    .when{ color:#2a4a78 }
+
+    /* pill and buttons: darker ink on lighter bg */
+    .badge{
+    background:linear-gradient(90deg, rgba(111,186,255,.95), rgba(255,143,198,.95));
+    color:#0f2750;
+    box-shadow: 0 8px 26px rgba(111,186,255,.28);
+    }
+    .btn{
+    --btn-bg: linear-gradient(90deg, rgba(111,186,255,.35), rgba(255,143,198,.35));
+    border:1px solid rgba(26,46,79,.18);
+    color:var(--text);
+    }
+    .btn:hover{ box-shadow: 0 12px 30px rgba(111,186,255,.32) }
   </style>
 </head>
 <body>
@@ -211,12 +268,6 @@
         <div class="unit"><div class="num" id="m">—</div><span class="label">Minutes</span></div>
         <div class="unit"><div class="num" id="s">—</div><span class="label">Seconds</span></div>
       </div>
-
-      <p class="note">Anchored to Cambridge time (Europe/London).</p>
-      <p class="when">
-        Cambridge: <span id="when-uk">Friday, 5 September 2025, 22:00</span><br/>
-        Your local time: <span id="when-local">Converting…</span>
-      </p>
 
       <div class="actions">
         <a class="btn" href="https://maps.google.com/?q=CB4+2BT" target="_blank" rel="noopener">Open in Maps</a>
