@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tina & Ángel — Countdown to Our Cambridge Arrival</title>
+  <title>Tina & Ángel — Countdown to finally meet again 🫶</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="A little surprise: a romantic countdown until we meet at Cambridge Station." />
+  <meta name="description" content="A little surprise: a romantic countdown until we meet 🏠." />
   <meta name="theme-color" content="#7aa7ff" />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -12,13 +12,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0c1024;
+      --bg:#ffffff;
       --blue:#7aa7ff;
       --pink:#ff9ac7;
       --text:#f6f8ff;
       --muted:#cfe0ff;
-      --glass:hsla(230,50%,12%,.55);
-      --ring: hsla(220, 90%, 70%, .35);
+      --glass:hsla(230, 85%, 57%, 0.55);
+      --ring: hsla(220, 58%, 59%, 0.35);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -201,7 +201,7 @@
 <body>
   <main class="wrap">
     <section class="card halo" aria-live="polite">
-      <div class="badge">🚆 Cambridge Station • Friday 5 Sept 2025 • 8:00 PM</div>
+      <div class="badge">🚆 🏠 • Friday 5 Sept 2025 • 10:00 PM</div>
       <h1>Tina & Ángel</h1>
       <p class="sub">After more than a month apart, we’re almost there. This is our countdown. 💙💗</p>
 
@@ -214,12 +214,12 @@
 
       <p class="note">Anchored to Cambridge time (Europe/London).</p>
       <p class="when">
-        Cambridge: <span id="when-uk">Friday, 5 September 2025, 20:00</span><br/>
+        Cambridge: <span id="when-uk">Friday, 5 September 2025, 22:00</span><br/>
         Your local time: <span id="when-local">Converting…</span>
       </p>
 
       <div class="actions">
-        <a class="btn" href="https://maps.google.com/?q=Cambridge+Railway+Station" target="_blank" rel="noopener">Open in Maps</a>
+        <a class="btn" href="https://maps.google.com/?q=CB4+2BT" target="_blank" rel="noopener">Open in Maps</a>
         <a class="btn" id="shareBtn" href="#" role="button">Share</a>
       </div>
 
@@ -228,9 +228,9 @@
   </main>
 
   <script>
-    // Event moment: 20:00 in Cambridge (Europe/London) on 2025-09-05.
-    // London is UTC+1 on this date (BST), so UTC time is 19:00Z.
-    const EVENT_ISO_UTC = '2025-09-05T19:00:00Z';
+    // Event moment: 22:00 in Cambridge (Europe/London) on 2025-09-05.
+    // London is UTC+1 on this date (BST), so UTC time is 21:00Z.
+    const EVENT_ISO_UTC = '2025-09-05T21:00:00Z';
     const eventDateUTC = new Date(EVENT_ISO_UTC);
 
     const elD = document.getElementById('d');
@@ -252,7 +252,7 @@
       uk.textContent = ukFmt.format(eventDateUTC);
       loc.textContent = yourFmt.format(eventDateUTC) + ` (${Intl.DateTimeFormat().resolvedOptions().timeZone})`;
     } catch {
-      uk.textContent = 'Fri, 5 Sep 2025, 20:00';
+      uk.textContent = 'Fri, 5 Sep 2025, 22:00';
       loc.textContent = 'Will match your device time';
     }
 
